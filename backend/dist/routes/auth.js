@@ -50,14 +50,21 @@ exports.router.post("/signup", (0, express_validator_1.body)("email").isEmail(),
         password: hashuedPassword,
     });
     //クライアントへのjwtの発行
-    const token = yield jsonwebtoken_1.default.sign({
+    return res.status(200).json({
+        message: "サインアップ成功！"
+    });
+    /*const token=await jwt.sign(
+      {
         email,
-    }, process.env.KEY, {
-        expiresIn: "24h",
-    });
+      },
+      process.env.KEY as string,
+      {
+        expiresIn:"24h",
+      }
+    );
     return res.json({
-        token: token,
-    });
+      token:token,
+    });*/
 }));
 //ログイン用API
 exports.router.post("/login", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
