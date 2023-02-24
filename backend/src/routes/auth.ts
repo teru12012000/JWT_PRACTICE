@@ -41,10 +41,10 @@ router.post("/signup",body("email").isEmail(),body("password").isLength({min:5})
   });
   
   //クライアントへのjwtの発行
-  return res.status(200).json({
+  /*return res.status(200).json({
     message:"サインアップ成功！"
-  });
-    /*const token=await jwt.sign(
+  });*/
+    const token=await jwt.sign(
       {
         email,
       },  
@@ -55,7 +55,7 @@ router.post("/signup",body("email").isEmail(),body("password").isLength({min:5})
     );
     return res.json({
       token:token,
-    });*/
+    });
 })
 
 

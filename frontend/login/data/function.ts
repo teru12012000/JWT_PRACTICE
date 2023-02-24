@@ -2,7 +2,8 @@ import { NextRouter } from "next/router";
 import { Dispatch, SetStateAction } from "react";
 
 type HelloResponse={
-  message: string;
+  message: string|undefined;
+  token:string|undefined;
 }
 
 export const signup=async(
@@ -24,8 +25,8 @@ export const signup=async(
   
   const data:HelloResponse=await responce.json();
   console.log(data)
-  if(data.message==="サインアップ成功！"){
-    router.push('/Success');
+  if(data.token){
+    router.push(`/Success?stateValue=${data.token}`);
   }else{
     window.alert(data.message);
   }
