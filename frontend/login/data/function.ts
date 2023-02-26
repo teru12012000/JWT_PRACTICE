@@ -10,9 +10,10 @@ export const signup=async(
   email:string,
   password:string,
   router:NextRouter,
+  url:string,
 )=>{
 
-  const responce=await fetch('http://localhost:5050/auth/signup',{
+  const responce=await fetch(url,{
     method:'POST',
     headers:{
       'Content-Type':'application/json'
@@ -32,6 +33,10 @@ export const signup=async(
   }
 }
 
-export const login=()=>{
+export const login=(
+  email:string,
+  password:string,
+  router:NextRouter,
+)=>{
 
 }

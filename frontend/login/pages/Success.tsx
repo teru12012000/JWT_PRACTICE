@@ -1,4 +1,6 @@
+import { Button } from "@mui/material";
 import { NextPage } from "next";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 type Props={
@@ -46,6 +48,11 @@ const Sucess:NextPage = ({stateValue}:Props) => {
           </div>
         ))
       ):(<h1>アクセス権限がないぞ！出直して来い！</h1>)}
+      <div className="mt-5">
+        <Link href="/">
+          <Button variant="text">ホームへ</Button>
+        </Link>
+      </div>
     </div>
   );
 }
