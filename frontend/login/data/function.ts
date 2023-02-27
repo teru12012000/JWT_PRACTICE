@@ -33,10 +33,3 @@ export const signup=async(
   }
 }
 
-export const login=(
-  email:string,
-  password:string,
-  router:NextRouter,
-)=>{
-
-}

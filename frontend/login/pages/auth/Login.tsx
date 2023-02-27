@@ -7,7 +7,7 @@ import { useState } from 'react'
 import { Visibility, VisibilityOff } from '@mui/icons-material'
 import InputInfomation from '@/components/InputInfomation'
 import Back from '@/components/Back'
-import { login, signup } from '@/data/function'
+import { signup } from '@/data/function'
 import { useRouter } from 'next/router'
 
 const inter = Inter({ subsets: ['latin'] })

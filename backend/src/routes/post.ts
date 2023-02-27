@@ -1,8 +1,6 @@
 import Router,{Request,Response} from "express";
-import jwt from "jsonwebtoken";
 import {config} from "dotenv";
 import { privatePosts, publicPosts } from "../db/Post";
-import { NextFunction } from "connect";
 import { middle } from "../middleware/checkjwt";
 
 config()
